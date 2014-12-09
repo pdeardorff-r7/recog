@@ -808,4 +808,17 @@ against these patterns to fingerprint FTP servers.
     <param pos="1" name="host.name"/>
     <param pos="2" name="service.version"/>
   </fingerprint>
+  <fingerprint pattern="^220 Welcome to the (?:Cisco )?(?:(?i)TelePresence) ((?:[a-zA-Z]+ )+\d+), version (\d+.\d+\(\d+.\d+\)).*">
+    <description>Cisco TelePresence</description>
+    <example os.version="1.1(1.34)" hw.product="AM GW 3610">220 Welcome to the Cisco TelePresence AM GW 3610, version 1.1(1.34)  331 Password required  530 Login incorrect  214 This is the FTP Server  221 Bye</example>
+    <example os.version="1.1(1.34)" hw.product="AM GW 3610">220 Welcome to the Cisco TelePresence AM GW 3610, version 1.1(1.34)  502 Command not implemented  214 This is the FTP Server  221 Bye</example>
+    <example os.version="2.0(3.32)" hw.product="IP GW 3510">220 Welcome to the Cisco TelePresence IP GW 3510, version 2.0(3.32)  331 Password required  530 Login incorrect  214 This is the FTP Server  221 Bye</example>
+    <example os.version="4.3(2.18)" hw.product="MCU 4210">220 Welcome to the Cisco TelePresence MCU 4210, version 4.3(2.18)</example>
+    <example os.version="4.3(1.68)" hw.product="MCU MSE 8420">220 Welcome to the Cisco TelePresence MCU MSE 8420, version 4.3(1.68)  331 Password required  530 Login incorrect  214 This is the FTP Server  221 Bye</example>
+    <example os.version="2.1(1.18)" hw.product="Server 7010">220 Welcome to the Telepresence Server 7010, version 2.1(1.18)  331 Password required  530 Login incorrect  214 This is the Codian FTP Server  221 Bye  </example>
+    <param pos="0" name="os.vendor" value="Cisco"/>
+    <param pos="0" name="os.product" value="TelePresence"/>
+    <param pos="1" name="hw.product"/>
+    <param pos="2" name="os.version"/>
+  </fingerprint>
 </fingerprints>
